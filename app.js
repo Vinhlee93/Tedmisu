@@ -153,57 +153,60 @@ const GROUPS = [
 
 const money = (n) => n.toLocaleString("vi-VN") + "đ";
 
-const card = (p) => `
+const card = (p, withPrice = true) => `
   <article class="card">
     <div class="card-media">
-      <img src="${p.img}" alt="${p.alt}" width="400" height="500" loading="lazy" decoding="async" />
+      <img src="${p.img}" alt="${p.alt}" width="380" height="380" loading="lazy" decoding="async" />
     </div>
     <h4>${p.name}</h4>
     <p class="desc">${p.desc}</p>
-    <p class="price">${money(p.price)}</p>
-    <a class="btn" href="${IG_DM}" target="_blank" rel="noopener noreferrer">Đặt bánh</a>
+    ${withPrice ? `<p class="price">${money(p.price)}</p>` : ""}
+    <a class="text-link" href="${IG_DM}" target="_blank" rel="noopener noreferrer">Đặt bánh →</a>
   </article>`;
 
-document.querySelector(".menu-index").innerHTML = GROUPS.map(
-  (g) => `<a href="#${g.id}">${g.name}</a>`
-).join("");
+const featuredEl = document.getElementById("featured");
+if (featuredEl) {
+  const preview = [
+    GROUPS[0].items[0],
+    GROUPS[1].items[0],
+    GROUPS[2].items[0],
+    GROUPS[3].items[0],
+  ];
+  featuredEl.innerHTML = preview.map((p) => card(p, false)).join("");
+}
 
-document.getElementById("menu").innerHTML = GROUPS.map(
-  (g) => `
-  <section class="group" id="${g.id}">
-    <h3>${g.name}</h3>
-    <div class="grid">${g.items.map(card).join("")}</div>
-  </section>`
-).join("");
+const indexNav = document.querySelector(".menu-index");
+const catalog = document.getElementById("menu");
+if (indexNav && catalog) {
+  indexNav.innerHTML = GROUPS.map((g) => `<a href="#${g.id}">${g.name}</a>`).join("");
+  catalog.innerHTML = GROUPS.map(
+    (g) => `
+    <section class="group" id="${g.id}">
+      <h3>${g.name}</h3>
+      <div class="grid">${g.items.map((p) => card(p, true)).join("")}</div>
+    </section>`
+  ).join("");
+}
 
-const year = document.getElementById("year");
-if (year) year.textContent = String(new Date().getFullYear());
+document.querySelectorAll("[data-year]").forEach((el) => {
+  el.textContent = String(new Date().getFullYear());
+});
 
 const drawer = document.getElementById("mobile-menu");
 const toggle = document.querySelector(".menu-toggle");
 const closeBtn = document.querySelector(".drawer-close");
 
 function setMenu(open) {
+  if (!drawer || !toggle) return;
   drawer.hidden = !open;
   toggle.setAttribute("aria-expanded", String(open));
   document.body.classList.toggle("menu-open", open);
 }
 
-toggle.addEventListener("click", () => setMenu(drawer.hidden));
-closeBtn.addEventListener("click", () => setMenu(false));
-drawer.querySelectorAll("a").forEach((a) => {
-  a.addEventListener("click", () => setMenu(false));
-});
-
-const banner = document.querySelector(".banner img");
-if (banner && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
-  window.addEventListener(
-    "scroll",
-    () => {
-      const rect = banner.parentElement.getBoundingClientRect();
-      const shift = Math.max(-24, Math.min(24, rect.top * 0.06));
-      banner.style.transform = `translateY(${shift}px) scale(1.06)`;
-    },
-    { passive: true }
-  );
+if (toggle && drawer) {
+  toggle.addEventListener("click", () => setMenu(drawer.hidden));
+  closeBtn?.addEventListener("click", () => setMenu(false));
+  drawer.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => setMenu(false));
+  });
 }
