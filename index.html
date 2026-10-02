@@ -3,74 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Tedmisu — Tiệm bánh thủ công</title>
-    <meta name="description" content="Tedmisu — bánh tiramisu, bánh kem và bánh ngọt làm mới mỗi ngày. Đặt hàng nhanh trên điện thoại." />
+    <title>Tedmisu Cake — Bánh handmade, làm mới mỗi ngày</title>
+    <meta
+      name="description"
+      content="Tedmisu Cake: tiramisu, brownie, cream bruleé, banana chocola cake, chesse bread và nước. Bánh làm trong ngày. Đặt qua Instagram @tedmisu.cake."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%233D2914'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='28' fill='%23F6E7D4'%3ET%3C/text%3E%3C/svg%3E" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232A1C14'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' fill='%23F4EDE4'%3ET%3C/text%3E%3C/svg%3E"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip" href="#san-pham">Tới danh sách bánh</a>
+    <a class="skip" href="#san-pham">Tới menu bánh</a>
 
-    <header class="topbar">
-      <a class="brand" href="#home">
-        <span class="brand-mark">T</span>
-        <span class="brand-name">Tedmisu</span>
-      </a>
-      <nav class="nav" aria-label="Chính">
+    <header class="header">
+      <a class="logo" href="#home">Tedmisu</a>
+      <nav class="nav-desktop" aria-label="Chính">
         <a href="#home">Trang chủ</a>
         <a href="#san-pham">Sản phẩm</a>
-        <a href="https://ig.me/m/tedmisu.cake" target="_blank" rel="noopener noreferrer">Đặt hàng</a>
+        <a href="#ve-tedmisu">Về Tedmisu</a>
+        <a href="#lien-he">Liên hệ</a>
+        <a href="https://www.instagram.com/tedmisu.cake/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
-      <a class="phone-btn" href="tel:0924876070">Gọi</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        Menu
+      </button>
     </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+      <button class="drawer-close" type="button">Đóng</button>
+      <nav class="nav-mobile" aria-label="Điện thoại">
+        <a href="#home">Trang chủ</a>
+        <a href="#san-pham">Sản phẩm</a>
+        <a href="#ve-tedmisu">Về Tedmisu</a>
+        <a href="#lien-he">Liên hệ</a>
+        <a href="https://www.instagram.com/tedmisu.cake/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="drawer-cta" href="https://ig.me/m/tedmisu.cake" target="_blank" rel="noopener noreferrer">Đặt bánh</a>
+      </nav>
+    </div>
 
     <main>
       <section class="hero" id="home">
         <div class="hero-copy">
-          <p class="eyebrow">Tiệm bánh thủ công</p>
+          <p class="kicker">Artisan bakery</p>
           <h1>Tedmisu</h1>
-          <p class="lede">
-            Tiramisu mềm, bánh kem tươi và bánh ngọt làm trong ngày. Chọn bánh, bấm đặt hàng — giao gần bạn.
-          </p>
+          <p class="tagline">Bánh làm chậm. Làm mới mỗi chiều.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#san-pham">Xem bánh</a>
-            <a class="btn btn-ghost" href="https://ig.me/m/tedmisu.cake" target="_blank" rel="noopener noreferrer">Đặt ngay</a>
+            <a class="btn" href="#san-pham">Xem bánh</a>
+            <a class="btn btn-ghost" href="https://ig.me/m/tedmisu.cake" target="_blank" rel="noopener noreferrer">Đặt bánh</a>
           </div>
         </div>
-        <figure class="hero-photo">
+        <figure class="hero-media">
           <img
-            src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1200&q=80"
-            alt="Ly tiramisu với cacao và ladyfinger"
-            width="800"
-            height="1000"
+            src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1400&q=80"
+            alt="Tiramisu Tedmisu Cake, lớp cacao và kem mascarpone"
+            width="900"
+            height="1100"
           />
         </figure>
       </section>
 
-      <section class="products" id="san-pham">
-        <div class="section-head">
-          <p class="eyebrow">Menu hôm nay</p>
-          <h2>Bánh đang bán</h2>
-          <p>Giá đã gồm hộp. Bấm đặt hàng để nhắn tin Instagram @tedmisu.cake.</p>
-        </div>
-        <div class="grid" id="product-grid"></div>
+      <section class="menu" id="san-pham">
+        <header class="section-intro">
+          <p class="kicker">Menu hôm nay</p>
+          <h2>Bánh hôm nay</h2>
+        </header>
+        <nav class="menu-index" aria-label="Nhóm bánh"></nav>
+        <div id="menu"></div>
       </section>
 
+      <section class="story" id="ve-tedmisu">
+        <figure class="story-media">
+          <img
+            src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1200&q=80"
+            alt="Brownie socola Tedmisu Cake"
+            width="800"
+            height="1000"
+            loading="lazy"
+          />
+        </figure>
+        <div class="story-copy">
+          <p class="kicker">Về Tedmisu</p>
+          <h2>Bánh được làm mỗi ngày.</h2>
+          <p>Tedmisu Cake làm bánh thủ công, từng mẻ nhỏ, từ nguyên liệu chọn lọc. Không tích kho. Mở cửa chiều tối, khi bánh vừa nguội đủ để cắt.</p>
+        </div>
+      </section>
+
+      <section class="banner" aria-label="Hình bánh lớn">
+        <img
+          src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1600&q=80"
+          alt="Tiramisu Tedmisu nhìn gần"
+          width="1600"
+          height="900"
+          loading="lazy"
+        />
+        <p class="banner-line">Làm tươi. Làm chậm.</p>
+      </section>
+
+      <section class="contact" id="lien-he">
+        <h2>Tedmisu</h2>
+        <dl>
+          <div>
+            <dt>Instagram</dt>
+            <dd>
+              <a href="https://www.instagram.com/tedmisu.cake/" target="_blank" rel="noopener noreferrer">@tedmisu.cake</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Điện thoại</dt>
+            <dd><a href="tel:0924876070">0924 876 070</a></dd>
+          </div>
+          <div>
+            <dt>Giờ mở cửa</dt>
+            <dd>17h30 – 20h30</dd>
+          </div>
+        </dl>
+        <a class="btn" href="https://ig.me/m/tedmisu.cake" target="_blank" rel="noopener noreferrer">Đặt bánh qua Instagram</a>
+      </section>
     </main>
 
     <footer class="footer">
-      <p><strong>Tedmisu</strong> · 17h30–20h30 mỗi ngày</p>
+      <p>Tedmisu</p>
       <p>
-        Điện thoại: <a href="tel:0924876070">0924 876 070</a>
-        · Instagram
-        <a href="https://www.instagram.com/tedmisu.cake/" target="_blank" rel="noopener noreferrer">@tedmisu.cake</a>
+        <a href="https://www.instagram.com/tedmisu.cake/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        ·
+        <a href="tel:0924876070">0924 876 070</a>
       </p>
+      <p class="copy">© <span id="year"></span> Tedmisu Cake</p>
     </footer>
 
     <script src="app.js"></script>

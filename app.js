@@ -1,67 +1,209 @@
 const IG_DM = "https://ig.me/m/tedmisu.cake";
 
-const PRODUCTS = [
+const GROUPS = [
   {
     id: "tiramisu",
-    name: "Tiramisu cổ điển",
-    price: 89000,
-    desc: "Mascarpone, espresso, cacao — signature của Tedmisu.",
-    img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80",
-    alt: "Tiramisu trong ly thủy tinh",
+    name: "Tiramisu",
+    items: [
+      {
+        name: "Tiramisu nguyên bản",
+        price: 89000,
+        desc: "Mascarpone, espresso, cacao.",
+        img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80",
+        alt: "Tiramisu nguyên bản Tedmisu Cake",
+      },
+      {
+        name: "Tiramisu matcha",
+        price: 89000,
+        desc: "Mascarpone và trà xanh.",
+        img: "https://images.unsplash.com/photo-1497534547324-0ebb3f052e88?auto=format&fit=crop&w=800&q=80",
+        alt: "Tiramisu matcha Tedmisu Cake",
+      },
+      {
+        name: "Tiramisu oreo",
+        price: 89000,
+        desc: "Mascarpone và oreo.",
+        img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80",
+        alt: "Tiramisu oreo Tedmisu Cake",
+      },
+      {
+        name: "Tiramisu caramel lotus",
+        price: 89000,
+        desc: "Mascarpone, caramel và bánh Lotus.",
+        img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80",
+        alt: "Tiramisu caramel lotus Tedmisu Cake",
+      },
+      {
+        name: "Tiramisu xoài",
+        price: 89000,
+        desc: "Chỉ có thứ Ba và thứ Sáu hằng tuần.",
+        img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80",
+        alt: "Tiramisu xoài Tedmisu Cake",
+      },
+    ],
   },
   {
-    id: "kem-dau",
-    name: "Bánh kem dâu",
-    price: 320000,
-    desc: "Bánh kem 16cm, dâu tươi, kem sữa.",
-    img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80",
-    alt: "Bánh kem dâu tươi",
+    id: "brownie",
+    name: "Brownie",
+    items: [
+      {
+        name: "Brownie nguyên bản",
+        price: 55000,
+        desc: "Socola đậm, mềm giữa.",
+        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+        alt: "Brownie nguyên bản Tedmisu Cake",
+      },
+      {
+        name: "Brownie chesse oreo",
+        price: 59000,
+        desc: "Brownie, kem cheese và oreo.",
+        img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80",
+        alt: "Brownie chesse oreo Tedmisu Cake",
+      },
+      {
+        name: "Brownie chesse lotus",
+        price: 59000,
+        desc: "Brownie, kem cheese và Lotus.",
+        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+        alt: "Brownie chesse lotus Tedmisu Cake",
+      },
+    ],
   },
   {
-    id: "socola",
-    name: "Chocolate lava",
-    price: 79000,
-    desc: "Nhân socola chảy, ăn nóng.",
-    img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
-    alt: "Bánh chocolate",
+    id: "cream-brulee",
+    name: "Cream Bruleé",
+    items: [
+      {
+        name: "Cream bruleé",
+        price: 69000,
+        desc: "Kem trứng, mặt đường cháy.",
+        img: "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?auto=format&fit=crop&w=800&q=80",
+        alt: "Cream bruleé Tedmisu Cake",
+      },
+    ],
   },
   {
-    id: "croissant",
-    name: "Croissant bơ",
-    price: 45000,
-    desc: "Lớp vỏ giòn, ruột xốp, nướng sáng.",
-    img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80",
-    alt: "Croissant vàng",
+    id: "banana-chocola",
+    name: "Banana Chocola cake",
+    items: [
+      {
+        name: "Banana cake nhỏ",
+        price: 65000,
+        desc: "Bánh chuối socola, size nhỏ.",
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
+        alt: "Banana cake nhỏ Tedmisu Cake",
+      },
+      {
+        name: "Banana cake lớn",
+        price: 185000,
+        desc: "Bánh chuối socola, size lớn.",
+        img: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=800&q=80",
+        alt: "Banana cake lớn Tedmisu Cake",
+      },
+    ],
   },
   {
-    id: "matcha",
-    name: "Roll cake matcha",
-    price: 95000,
-    desc: "Trà xanh Nhật, kem nhẹ, ít ngọt.",
-    img: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80",
-    alt: "Bánh roll",
+    id: "chesse-bread",
+    name: "Chesse Bread",
+    items: [
+      {
+        name: "Chesse bread",
+        price: 45000,
+        desc: "Bánh mì phô mai.",
+        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+        alt: "Chesse bread Tedmisu Cake",
+      },
+    ],
   },
   {
-    id: "macaron",
-    name: "Hộp macaron 6 viên",
-    price: 129000,
-    desc: "Vani, việt quất, chocolate, dâu.",
-    img: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=800&q=80",
-    alt: "Macaron nhiều màu",
+    id: "nuoc",
+    name: "Nước",
+    items: [
+      {
+        name: "Trà sữa lài",
+        price: 39000,
+        desc: "Trà lài, sữa.",
+        img: "https://images.unsplash.com/photo-1556679343-c7306c197375?auto=format&fit=crop&w=800&q=80",
+        alt: "Trà sữa lài Tedmisu Cake",
+      },
+      {
+        name: "Trà sữa Tedmisu",
+        price: 39000,
+        desc: "Công thức nhà Tedmisu.",
+        img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80",
+        alt: "Trà sữa Tedmisu",
+      },
+      {
+        name: "Trà dâu",
+        price: 39000,
+        desc: "Trà và dâu.",
+        img: "https://images.unsplash.com/photo-1556679343-c7306c197375?auto=format&fit=crop&w=800&q=80",
+        alt: "Trà dâu Tedmisu Cake",
+      },
+      {
+        name: "Trà bự",
+        price: 45000,
+        desc: "Ly lớn.",
+        img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80",
+        alt: "Trà bự Tedmisu Cake",
+      },
+    ],
   },
 ];
 
 const money = (n) => n.toLocaleString("vi-VN") + "đ";
 
-document.getElementById("product-grid").innerHTML = PRODUCTS.map(
-  (p) => `
-    <article class="card">
-      <img src="${p.img}" alt="${p.alt}" width="400" height="300" loading="lazy" />
-      <div class="card-body">
-        <h3>${p.name}</h3>
-        <p class="price">${money(p.price)}</p>
-        <p>${p.desc}</p>
-        <a class="btn btn-primary" href="${IG_DM}" target="_blank" rel="noopener noreferrer">Đặt hàng</a>
-      </div>
-    </article>`
+const card = (p) => `
+  <article class="card">
+    <div class="card-media">
+      <img src="${p.img}" alt="${p.alt}" width="400" height="500" loading="lazy" decoding="async" />
+    </div>
+    <h4>${p.name}</h4>
+    <p class="desc">${p.desc}</p>
+    <p class="price">${money(p.price)}</p>
+    <a class="btn" href="${IG_DM}" target="_blank" rel="noopener noreferrer">Đặt bánh</a>
+  </article>`;
+
+document.querySelector(".menu-index").innerHTML = GROUPS.map(
+  (g) => `<a href="#${g.id}">${g.name}</a>`
 ).join("");
+
+document.getElementById("menu").innerHTML = GROUPS.map(
+  (g) => `
+  <section class="group" id="${g.id}">
+    <h3>${g.name}</h3>
+    <div class="grid">${g.items.map(card).join("")}</div>
+  </section>`
+).join("");
+
+const year = document.getElementById("year");
+if (year) year.textContent = String(new Date().getFullYear());
+
+const drawer = document.getElementById("mobile-menu");
+const toggle = document.querySelector(".menu-toggle");
+const closeBtn = document.querySelector(".drawer-close");
+
+function setMenu(open) {
+  drawer.hidden = !open;
+  toggle.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("menu-open", open);
+}
+
+toggle.addEventListener("click", () => setMenu(drawer.hidden));
+closeBtn.addEventListener("click", () => setMenu(false));
+drawer.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", () => setMenu(false));
+});
+
+const banner = document.querySelector(".banner img");
+if (banner && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const rect = banner.parentElement.getBoundingClientRect();
+      const shift = Math.max(-24, Math.min(24, rect.top * 0.06));
+      banner.style.transform = `translateY(${shift}px) scale(1.06)`;
+    },
+    { passive: true }
+  );
+}

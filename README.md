@@ -1,8 +1,8 @@
-# Tedmisu
+# Tedmisu Cake
 
-Website bán bánh: trang chủ, danh sách sản phẩm (ảnh + giá). Nút đặt hàng mở inbox Instagram [@tedmisu.cake](https://ig.me/m/tedmisu.cake).
+Website tĩnh (HTML, CSS, JS): menu 6 nhóm, đặt bánh qua Instagram [@tedmisu.cake](https://ig.me/m/tedmisu.cake).
 
-Liên hệ: 0924 876 070 · 17h30–20h30 · Instagram [@tedmisu.cake](https://www.instagram.com/tedmisu.cake/)
+Giờ mở cửa: 17h30–20h30. Điện thoại: 0924 876 070.
 
 ## Chạy
 
