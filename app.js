@@ -30,7 +30,7 @@ const GROUPS = [
         name: "Tiramisu caramel lotus",
         price: 89000,
         desc: "Mascarpone, caramel và bánh Lotus.",
-        img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80",
+        img: "images/tiramisu-caramel-lotus.jpg",
         alt: "Tiramisu caramel lotus Tedmisu Cake",
       },
       {
@@ -175,15 +175,26 @@ if (featuredEl) {
   featuredEl.innerHTML = preview.map((p) => card(p, false)).join("");
 }
 
-const indexNav = document.querySelector(".menu-index");
 const catalog = document.getElementById("menu");
-if (indexNav && catalog) {
-  indexNav.innerHTML = GROUPS.map((g) => `<a href="#${g.id}">${g.name}</a>`).join("");
+if (catalog && document.body.classList.contains("menu-page")) {
+  const row = (p) => `
+    <article class="menu-product">
+      <img class="menu-product-image" src="${p.img}" alt="${p.alt}" width="72" height="72" loading="lazy" decoding="async" />
+      <div class="menu-product-info">
+        <div class="product-title-line">
+          <span class="product-name">${p.name}</span>
+          <span class="product-dots" aria-hidden="true"></span>
+          <span class="product-price">${money(p.price)}</span>
+        </div>
+        <p class="menu-product-desc">${p.desc}</p>
+      </div>
+    </article>`;
+
   catalog.innerHTML = GROUPS.map(
     (g) => `
-    <section class="group" id="${g.id}">
-      <h3>${g.name}</h3>
-      <div class="grid">${g.items.map((p) => card(p, true)).join("")}</div>
+    <section class="menu-category" id="${g.id}">
+      <h2 class="menu-category-title">${g.name}</h2>
+      ${g.items.map(row).join("")}
     </section>`
   ).join("");
 }

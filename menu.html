@@ -17,8 +17,8 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <a class="skip" href="#catalog">Tới danh sách bánh</a>
+  <body class="menu-page">
+    <a class="skip" href="#menu">Tới danh sách bánh</a>
 
     <header class="header">
       <div class="wrap header-inner">
@@ -43,19 +43,13 @@
       </nav>
     </div>
 
-    <main>
-      <section class="menu-hero">
-        <div class="wrap">
-          <p class="kicker">Tedmisu Cake</p>
-          <h1>Menu</h1>
-          <p class="lede">Bánh làm trong ngày. Đặt qua Instagram.</p>
-          <nav class="menu-index" aria-label="Nhóm bánh"></nav>
-        </div>
-      </section>
-
-      <section class="catalog" id="catalog">
-        <div class="wrap" id="menu"></div>
-      </section>
+    <main class="menu-sheet">
+      <header class="menu-intro">
+        <h1>Menu</h1>
+        <p>Bánh được làm mới mỗi ngày.</p>
+        <a class="menu-order-cta" href="https://ig.me/m/tedmisu.cake" target="_blank" rel="noopener noreferrer">Đặt bánh qua Instagram →</a>
+      </header>
+      <div class="menu-category-grid" id="menu"></div>
     </main>
 
     <footer class="footer">
@@ -65,6 +59,7 @@
           <a href="https://instagram.com/tedmisu.cake" target="_blank" rel="noopener noreferrer">Instagram</a>
           ·
           <a href="tel:0924876070">0924 876 070</a>
+          · 17h30–20h30
         </p>
         <p class="copy">© <span data-year></span> Tedmisu Cake</p>
       </div>
