@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Tedmisu — Tiệm bánh thủ công</title>
+    <meta name="description" content="Tedmisu — bánh tiramisu, bánh kem và bánh ngọt làm mới mỗi ngày. Đặt hàng nhanh trên điện thoại." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%233D2914'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='28' fill='%23F6E7D4'%3ET%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#san-pham">Tới danh sách bánh</a>
+
+    <header class="topbar">
+      <a class="brand" href="#home">
+        <span class="brand-mark">T</span>
+        <span class="brand-name">Tedmisu</span>
+      </a>
+      <nav class="nav" aria-label="Chính">
+        <a href="#home">Trang chủ</a>
+        <a href="#san-pham">Sản phẩm</a>
+        <a href="https://ig.me/m/tedmisu.cake" target="_blank" rel="noopener noreferrer">Đặt hàng</a>
+      </nav>
+      <a class="phone-btn" href="tel:0924876070">Gọi</a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Tiệm bánh thủ công</p>
+          <h1>Tedmisu</h1>
+          <p class="lede">
+            Tiramisu mềm, bánh kem tươi và bánh ngọt làm trong ngày. Chọn bánh, bấm đặt hàng — giao gần bạn.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#san-pham">Xem bánh</a>
+            <a class="btn btn-ghost" href="https://ig.me/m/tedmisu.cake" target="_blank" rel="noopener noreferrer">Đặt ngay</a>
+          </div>
+        </div>
+        <figure class="hero-photo">
+          <img
+            src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1200&q=80"
+            alt="Ly tiramisu với cacao và ladyfinger"
+            width="800"
+            height="1000"
+          />
+        </figure>
+      </section>
+
+      <section class="products" id="san-pham">
+        <div class="section-head">
+          <p class="eyebrow">Menu hôm nay</p>
+          <h2>Bánh đang bán</h2>
+          <p>Giá đã gồm hộp. Bấm đặt hàng để nhắn tin Instagram @tedmisu.cake.</p>
+        </div>
+        <div class="grid" id="product-grid"></div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p><strong>Tedmisu</strong> · 17h30–20h30 mỗi ngày</p>
+      <p>
+        Điện thoại: <a href="tel:0924876070">0924 876 070</a>
+        · Instagram
+        <a href="https://www.instagram.com/tedmisu.cake/" target="_blank" rel="noopener noreferrer">@tedmisu.cake</a>
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
